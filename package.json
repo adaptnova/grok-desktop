@@ -1,11 +1,11 @@
 {
   "name": "grok-desktop",
-  "version": "0.7.3",
+  "version": "0.8.0",
   "description": "Lightweight desktop GUI for Grok Build CLI",
   "type": "module",
   "scripts": {
-    "dev": "vite dev --host 127.0.0.1 --port 1420 --strictPort",
-    "build": "vite build",
+    "dev": "node api.js && vite dev --host 127.0.0.1 --port 1420 --strictPort",
+    "build": "node api.js && vite build",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
@@ -15,7 +15,7 @@
     "tauri": "tauri",
     "tauri:dev": "tauri dev",
     "tauri:build": "tauri build",
-    "start": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/launch-stable.ps1",
+    "start": "node api.js && powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/launch-stable.ps1",
     "start:dev": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/launch-dev.ps1",
     "start:release": "npm run tauri:build -- --no-bundle --ci && start \"\" \"src-tauri\\target\\release\\grok-desktop.exe\"",
     "polish": "cd src-tauri && cargo fmt --all && cargo clippy --all-targets -- -D warnings && cd .. && npm run lint && npm run build"
