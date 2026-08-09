@@ -21,3 +21,16 @@ Thumbs.db
 .vscode/*
 !.vscode/extensions.json
 !.vscode/settings.json
+.cargo/
+ops/receipts/
+.hf_cache/
+.runtime/
+packs/
+sessions/
+target/
+__pycache__/
+.venv/
+wake_brief.current.json
+*.env
+*.env.*
+!.env.example
